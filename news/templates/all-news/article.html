@@ -1,4 +1,4 @@
-{%extends 'all-news/base.html'%}
+%extends 'all-news/base.html'%}
 
  {% block content %}
 
@@ -13,7 +13,10 @@
    </div>
 
    <div class="row">
-     <p>{{article.post}}</p>
+     {% autoescape on %}
+     {{article.post| safe}}
+    {% endautoescape %}
+
    </div>
 
    <div class="row">
